@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        int h1, h2, total = 0;
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Digite a hora que começou o jogo:");
+        h1 = sc.nextInt();
+        System.out.println("Digite a hora que o jogo terminou:");
+        h2 = sc.nextInt();
+
+        //Verifica se o horário é valido
+        if (h1 < 0 || h1 > 23 || h2 < 0 || h2 > 23) {
+            System.out.println("Horas de entrada inválidas.");
+            return;
+        }
+
+        if (h1 < h2) {
+            total = h2 - h1;
+        } else if (h1 > h2) {
+            total = (24 - h1) + h2;
+        } else {
+            total = 24;
+        }
+
+       System.out.println("Jogo durou:" + total + " Horas");
+    }
+}
