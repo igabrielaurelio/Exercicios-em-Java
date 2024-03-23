@@ -9,12 +9,12 @@ public class Main {
 	int numero;
 	
 	System.out.println("Digite um numero");
-	numero = sc.nextInt();
+	numero = sc.nextInt();//Escaneia o numero digitado pelo usuário
 	
 	if(numero>0){
-		System.out.println("Positivo");
+		System.out.println("Positivo");//Caso o numero seja positivo ele vai imprimir que é positivo
 	} else if(numero<0){
-		System.out.println("Negativo");
+		System.out.println("Negativo");//Caso contrario, negativo
 	} else{
 		System.out.println("Neutro");
 		
