@@ -3,41 +3,34 @@ import java.util.Locale;
 
 public class Main {
     public static void main(String[] args) {
-
+        // Declaração das variáveis para armazenar as coordenadas x e y
         float x, y;
 
+        // Criação de um objeto Scanner para receber a entrada do usuário, configurado para usar o padrão de localidade US (ponto decimal)
         Scanner sc = new Scanner(System.in).useLocale(Locale.US);
 
+        // Solicita ao usuário que digite a coordenada x
         System.out.println("Digite o X:");
         x = sc.nextFloat();
 
+        // Solicita ao usuário que digite a coordenada y
         System.out.println("Digite o Y:");
         y = sc.nextFloat();
 
-        if(x == 0 && y == 0){
-
+        // Verifica em qual quadrante ou eixo as coordenadas se encontram e imprime a mensagem correspondente
+        if (x == 0 && y == 0) {
             System.out.println("Origem");
-
-        } else if(x>0 && y>0){
-
+        } else if (x > 0 && y > 0) {
             System.out.println("Q1");
-
-        } else if(x<0 && y>0){
-
+        } else if (x < 0 && y > 0) {
             System.out.println("Q2");
-
-        } else if(x<0 && y<0){
-
+        } else if (x < 0 && y < 0) {
             System.out.println("Q3");
-
-        } else if(x>0 && y<0){
-
+        } else if (x > 0 && y < 0) {
             System.out.println("Q4");
-
-        } else{
-
+        } else {
+            // Se as coordenadas não estiverem em nenhum quadrante (ou seja, estiverem em um eixo), imprime "Inválido"
             System.out.println("Inválido");
-
         }
     }
 }
