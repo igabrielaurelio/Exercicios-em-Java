@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        // Cria um objeto Scanner para receber a entrada do usuário
+        Scanner sc = new Scanner(System.in);
+
+        // Declara as variáveis para armazenar os valores de x, y e a flag a
+        int x, y;
+        boolean a = false;
+
+        // Loop while para solicitar valores de x e y até que a flag a seja true
+        while (a == false) {
+            // Solicita ao usuário que digite o valor de x
+            System.out.println("Digite o valor do X");
+            x = sc.nextInt();
+
+            // Solicita ao usuário que digite o valor de y
+            System.out.println("Digite o valor do Y");
+            y = sc.nextInt();
+
+            // Verifica em qual quadrante o ponto está ou se está no eixo x ou y, ou na origem
+            if (x > 0 && y > 0) {
+                System.out.println("primeiro");
+            } else if (x < 0 && y > 0) {
+                System.out.println("segundo");
+            } else if (x < 0 && y < 0) {
+                System.out.println("terceiro");
+            } else if (x > 0 && y < 0) {
+                System.out.println("quarto");
+            } else if (x == 0 || y == 0) {
+                // Se pelo menos uma das coordenadas for zero, define a flag a como true para encerrar o loop
+                a = true;
+            }
+        }
+		// Fechar o objeto Scanner para liberar recursos
+       		 sc.close();
+    }
+}
