@@ -1,27 +1,28 @@
 import java.util.Scanner;
 
-public class Main{
-    public static void main(String[] args){
-
+public class Main {
+    public static void main(String[] args) {
+        // Declaração de uma variável booleana para controlar o loop
         boolean a = false;
 
+        // Criação de um objeto Scanner para receber a entrada do usuário
         Scanner sc = new Scanner(System.in);
 
-        while(a == false){
-
+        // Loop while para solicitar a senha até que a senha correta seja inserida
+        while (a == false) {
+            // Solicita ao usuário que digite a senha
             System.out.println("Digite a senha:");
             int senha = sc.nextInt();
 
-            if(senha != 2002){
-
-                System.out.println("Senha invalida");
-
+            // Verifica se a senha inserida é diferente da senha correta (2002)
+            if (senha != 2002) {
+                System.out.println("Senha inválida"); // Informa ao usuário que a senha é inválida
             } else {
-
-                System.out.println("Acesso Permitido");
-                a = true;
-
+                System.out.println("Acesso Permitido"); // Informa ao usuário que o acesso foi permitido
+                a = true; // Altera o valor da variável booleana para true, encerrando o loop
             }
         }
+		// Fechar o objeto Scanner para liberar recursos
+       		 sc.close();
     }
 }
