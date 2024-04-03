@@ -2,30 +2,36 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-
+        // Declaração das variáveis para armazenar os horários de início e término do jogo, e o total de horas jogadas
         int h1, h2, total = 0;
 
+        // Criação de um objeto Scanner para receber entrada do usuário
         Scanner sc = new Scanner(System.in);
 
+        // Solicita que o usuário digite o horário de início do jogo
         System.out.println("Digite a hora que começou o jogo:");
         h1 = sc.nextInt();
+        
+        // Solicita que o usuário digite o horário de término do jogo
         System.out.println("Digite a hora que o jogo terminou:");
         h2 = sc.nextInt();
 
-        //Verifica se o horário é valido
+        // Verifica se os horários digitados são válidos (entre 0 e 23 horas)
         if (h1 < 0 || h1 > 23 || h2 < 0 || h2 > 23) {
             System.out.println("Horas de entrada inválidas.");
             return;
         }
 
+        // Calcula a duração do jogo com base nos horários de início e término
         if (h1 < h2) {
-            total = h2 - h1;
+            total = h2 - h1; // Se o horário de término for maior que o de início, a duração é simplesmente a diferença entre eles
         } else if (h1 > h2) {
-            total = (24 - h1) + h2;
+            total = (24 - h1) + h2; // Se o horário de término for menor que o de início, é preciso contar o tempo até o final do dia e somar o tempo do próximo dia
         } else {
-            total = 24;
+            total = 24; // Se os horários de início e término forem iguais, o jogo durou 24 horas
         }
 
-       System.out.println("Jogo durou:" + total + " Horas");
+        // Imprime a duração do jogo em horas
+        System.out.println("Jogo durou:" + total + " Horas");
     }
 }
