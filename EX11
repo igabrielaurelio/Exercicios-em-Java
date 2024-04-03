@@ -1,0 +1,57 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        // Cria um objeto Scanner para receber a entrada do usuário
+        Scanner sc = new Scanner(System.in);
+
+        // Mensagem inicial para apresentar as opções ao usuário
+        String posto = "Bem-vindo ao Posto Ipiranga!\n" +
+                       "A sua opinião é importante para o crescimento do posto!\n" +
+                       "Digite 1 para álcool\n" +
+                       "Digite 2 para gasolina\n" +
+                       "Digite 3 para diesel\n" +
+                       "Digite 4 para sair\n";
+
+        // Variáveis para contabilizar os votos para cada tipo de combustível e a opção de fim do programa
+        int alcool = 0, gasolina = 0, diesel = 0, opcao, fim = 0;
+
+        // Exibe a mensagem inicial com as opções disponíveis
+        System.out.println(posto);
+
+        // Loop para receber os votos até que o usuário decida sair
+        while (fim == 0) {
+            // Recebe a opção do usuário
+            opcao = sc.nextInt();
+
+            // Estrutura switch para processar a escolha do usuário
+            switch (opcao) {
+                case 1:
+                    alcool++; // Incrementa o contador de votos para álcool
+                    break;
+                case 2:
+                    gasolina++; // Incrementa o contador de votos para gasolina
+                    break;
+                case 3:
+                    diesel++; // Incrementa o contador de votos para diesel
+                    break;
+                case 4:
+                    // Quando o usuário escolhe sair, exibe os resultados e termina o programa
+                    System.out.println("MUITO OBRIGADO!");
+                    System.out.println("Álcool: "+ alcool);
+                    System.out.println("Gasolina: "+ gasolina);
+                    System.out.println("Diesel: "+ diesel);
+                    fim = 1; // Altera a variável fim para encerrar o loop
+                    break;
+                default:
+                    // Se o usuário digitar uma opção inválida, exibe uma mensagem de erro
+                    if (opcao > 4) {
+                        System.out.println("Opção inválida");
+                        break;
+                    }
+            }
+        }
+     // Fechar o objeto Scanner para liberar recursos
+  		 sc.close();
+    }
+}
