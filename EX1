@@ -1,24 +1,30 @@
 import java.util.Scanner;
 
-
 public class Main {
 
-	public static void main (String[] args){
-	
-	Scanner sc= new Scanner(System.in);
-	int numero;
-	
-	System.out.println("Digite um numero");
-	numero = sc.nextInt();//Escaneia o numero digitado pelo usuário
-	
-	if(numero>0){
-		System.out.println("Positivo");//Caso o numero seja positivo ele vai imprimir que é positivo
-	} else if(numero<0){
-		System.out.println("Negativo");//Caso contrario, negativo
-	} else{
-		System.out.println("Neutro");
-		
-		}
-	sc.close();
-	}
+    public static void main(String[] args) {
+        // Criar um objeto Scanner para receber entrada do usuário
+        Scanner sc = new Scanner(System.in);
+        
+        // Declaração da variável para armazenar o número digitado pelo usuário
+        int numero;
+        
+        // Solicitar que o usuário digite um número
+        System.out.println("Digite um número");
+        
+        // Ler o número fornecido pelo usuário
+        numero = sc.nextInt();
+        
+        // Verificar se o número é positivo, negativo ou neutro e imprimir o resultado correspondente
+        if (numero > 0) {
+            System.out.println("Positivo");
+        } else if (numero < 0) {
+            System.out.println("Negativo");
+        } else {
+            System.out.println("Neutro");
+        }
+        
+        // Fechar o objeto Scanner para liberar recursos
+        sc.close();
+    }
 }
