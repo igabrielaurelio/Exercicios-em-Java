@@ -2,23 +2,29 @@ import java.util.Scanner;
 
 public class Main {
 
-	public static void main (String[] args){
-	
-	Scanner sc= new Scanner(System.in);
-	int n1, n2;
-	
-	System.out.println("Digite o primeiro número");
-	n1 = sc.nextInt();
-	
-	System.out.println("Digite o segundo número");
-	n2 = sc.nextInt();
-	
-	
-	if(n1>n2 && n1%n2==0 || n2>n1 && n2%n1==0){
-		System.out.println("é multiplo");
-	} else{
-		System.out.println("não é multiplo");
-	}
-	sc.close();
-  }
+    public static void main(String[] args) {
+        // Criar um objeto Scanner para receber entrada do usuário
+        Scanner sc = new Scanner(System.in);
+        
+        // Declaração das variáveis para armazenar os números digitados pelo usuário
+        int n1, n2;
+        
+        // Solicitar que o usuário digite o primeiro número
+        System.out.println("Digite o primeiro número");
+        n1 = sc.nextInt();
+        
+        // Solicitar que o usuário digite o segundo número
+        System.out.println("Digite o segundo número");
+        n2 = sc.nextInt();
+        
+        // Verificar se um dos números é múltiplo do outro e imprimir o resultado correspondente
+        if ((n1 > n2 && n1 % n2 == 0) || (n2 > n1 && n2 % n1 == 0)) {
+            System.out.println("É múltiplo");
+        } else {
+            System.out.println("Não é múltiplo");
+        }
+        
+        // Fechar o objeto Scanner para liberar recursos
+        sc.close();
+    }
 }
