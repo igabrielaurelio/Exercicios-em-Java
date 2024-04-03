@@ -2,45 +2,51 @@ import java.util.Scanner;
 
 public class Main {
 
-	public static void main (String[] args){
-	
-	System.out.println("Código		Especificação		Preço");
-	System.out.println("  1		Cachorro Quente		R$4.00");
-	System.out.println("  2		X-Salada		R$4.50");
-	System.out.println("  3		X-Bacon			R$5.00");
-	System.out.println("  4		Torrada Simples		R$2.00");
-	System.out.println("  5		Refrigerante		R$1.50");
-	
-	int codigo, qnt;
-	float total = 0;
-			
-	Scanner sc= new Scanner(System.in);
-	
-	System.out.println("Digite o Código do produto:");
-	codigo = sc.nextInt();
-	System.out.println("Digite a Quantidade que deseja");
-	qnt = sc.nextInt();
-	
-	if(codigo==1){
-		total = qnt * 4;
-		
-	} else if(codigo==2){
-		total = qnt * 4.50f;
-		
-	} else if(codigo==3){
-		total = qnt * 5;
-		
-	} else if(codigo==4){
-		total = qnt * 2;
-		
-	} else if(codigo==5){
-		total = qnt * 1.50f;
-		
-	}
-	String mensagem = "Total a pagar: ";
-			
-	System.out.println(mensagem + total);
-	
-	sc.close();
-  }
+    public static void main(String[] args) {
+
+        // Impressão do menu de produtos com seus respectivos códigos e preços
+        System.out.println("Código        Especificação        Preço");
+        System.out.println("  1          Cachorro Quente      R$4.00");
+        System.out.println("  2          X-Salada             R$4.50");
+        System.out.println("  3          X-Bacon              R$5.00");
+        System.out.println("  4          Torrada Simples      R$2.00");
+        System.out.println("  5          Refrigerante         R$1.50");
+
+        // Declaração de variáveis para armazenar o código do produto e a quantidade desejada
+        int codigo, qnt;
+        float total = 0;
+
+        // Criação de um objeto Scanner para receber a entrada do usuário
+        Scanner sc = new Scanner(System.in);
+
+        // Solicita ao usuário que digite o código do produto
+        System.out.println("Digite o Código do produto:");
+        codigo = sc.nextInt();
+
+        // Solicita ao usuário que digite a quantidade desejada
+        System.out.println("Digite a Quantidade que deseja:");
+        qnt = sc.nextInt();
+
+        // Calcula o total com base no código do produto e na quantidade desejada
+        if (codigo == 1) {
+            total = qnt * 4;
+        } else if (codigo == 2) {
+            total = qnt * 4.50f;
+        } else if (codigo == 3) {
+            total = qnt * 5;
+        } else if (codigo == 4) {
+            total = qnt * 2;
+        } else if (codigo == 5) {
+            total = qnt * 1.50f;
+        }
+
+        // Define a mensagem a ser exibida, incluindo o total a pagar
+        String mensagem = "Total a pagar: ";
+
+        // Exibe o total a pagar ao usuário
+        System.out.println(mensagem + total);
+
+        // Fecha o Scanner para liberar recursos
+        sc.close();
+    }
 }
