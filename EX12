@@ -1,1 +1,22 @@
+import java.util.Random;
+import java.util.Scanner;
 
+public class Main {
+    public static void main(String[] args) {
+
+        Random gerador = new Random();
+        Scanner sc = new Scanner(System.in);
+
+        int n = (gerador.nextInt(5) + 1);
+
+        int adivinhar = sc.nextInt();
+
+        if(adivinhar != n){
+            System.out.println("Numero incorreto!");
+        } else{
+            System.out.println("Numero Correto!");
+        }
+
+        sc.close();
+    }
+}
